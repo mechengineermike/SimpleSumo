@@ -1,8 +1,26 @@
-// SimpleSumo Robotics 
-// "Sumo_Battle_Program "
-// Orignial created September, 2017
-// Original By Michael Graham, www.EngineerDog.com
-// Licence: Attribution-ShareAlike CC BY-SA 
+// Copyright (C) 2017 EngineerDog.com LLC
+//
+// This work is licensed under the Creative Commons 
+// Attribution-NonCommercial-ShareAlike 4.0 International License.
+// To view a copy of this license, visit http://creativecommons.org/licenses/by-nc-sa/4.0/.
+// Attribution for derivations of this work should be made to: EngineerDog.com LLC
+// 
+// You may use this work for noncommercial purposes without cost as long as you give us
+// credit for our work (attribution) and any improvements you make are licensed in a way
+// no more restrictive than our license. See the license for more details.
+//
+// For example, you may build a SimpleSumo yourself and use this code for your own experiments,
+// or you can build one and give the SimpleSumo running this code to a friend, as long as you
+// don't charge for it. 
+// If you have a question about whether a contemplated use is in compliance with the license,
+// just ask us. We're friendly. Email us at MechEngineerMike.com
+//
+// For more information about SimpleSumo see https://engineerdog.com/simplesumo/,  
+//
+//***************************************************************************
+//
+// SimpleSumo Robotics "Sumo_Battle_Program"
+// Original created September, 2017, by Michael Graham, www.EngineerDog.com
 //
 // This program operates the SimpleSumo robot in sumo wrestling mode.  
 // The program is written to facilitate the customization of the SimpleSumo Robot modules & behaviour.
@@ -36,9 +54,11 @@
 //  D13 = (reserved for the embedded LED on this pin)
 //  Any 5V = Ultrasonic 'Vcc', 3x Edge Sensor 'Vcc', Servo Motor 'Vcc', 
 //  Any GND = Ultrasonic 'GND', 3x  Edge Sensor 'GND', Servo Motor 'Gnd', 2x Button Output, Buzzer short leg
-//
+
+//***************************************************************************
+
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//____DECLARATIONS SECTION_____________________________________________________________________________________________________
+//____DECLARATIONS SECTION__________________________________________________________________________________________
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 #include <Servo.h>  //Arduino library that allows for simple control of servo motors. 
@@ -86,7 +106,7 @@ bool ButtonSensed = false;
 int StuckCounter = 0;
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//____SETUP SECTION_____________________________________________________________________________________________________
+//____SETUP SECTION_________________________________________________________________________________________________
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
  void setup()
@@ -121,7 +141,7 @@ int StuckCounter = 0;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//____ LOOP SECTION_____________________________________________________________________________________________________
+//____ LOOP SECTION_________________________________________________________________________________________________________
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void loop(){
@@ -154,8 +174,8 @@ void loop(){
 
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//____ FUNCTIONS SECTION__________________________________________________________________________________________________________
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//____ FUNCTIONS SECTION___________________________________________________________________________________________________
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void UltraSense(){ // The following trigPin/echoPin cycle is used to determine the distance of the nearest object by bouncing soundwaves off of it. 
  digitalWrite(trigPin, LOW); // Clears the trigPin 
@@ -295,8 +315,8 @@ void AccessoryLoop(){ //This pauses the robot for 5 seconds (5000 milliseconds) 
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//____ MOTION COMMANDS (Just a sublevel of the functions)__________________________________________________________________________________________________________
-////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+//____ MOTION COMMANDS (Just a sublevel of the functions)__________________________________________________________________
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 void PivotLeft(){
 	 LeftServo.write(90+15);  //(>90 is forward for left motor). 90 sets servo speed to zero. (0 and 180 are the opposing extreme speeds)
